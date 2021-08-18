@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,64 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sound" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="N3i-o4-NsF">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jrg-oo-oYV">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="284"/>
+                                        <state key="normal" image="drumImage"/>
+                                        <connections>
+                                            <action selector="tapDownDrumButton" destination="BYZ-38-t0r" eventType="touchDown" id="UGP-GL-smp"/>
+                                            <action selector="touchUpDramButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="wxg-ab-JCz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMC-xl-Fzg">
+                                        <rect key="frame" x="0.0" y="284" width="414" height="284"/>
+                                        <state key="normal" image="pianoImage"/>
+                                        <connections>
+                                            <action selector="tapDownPianoButton" destination="BYZ-38-t0r" eventType="touchDown" id="zAZ-KA-afE"/>
+                                            <action selector="touchUpPianoButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="F2y-E5-uST"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RnB-k4-cHg">
+                                        <rect key="frame" x="0.0" y="568" width="414" height="284"/>
+                                        <state key="normal" image="guitarImage"/>
+                                        <connections>
+                                            <action selector="tapDownGuitarButton" destination="BYZ-38-t0r" eventType="touchDown" id="JDe-1g-bZ2"/>
+                                            <action selector="touchUpGuitarButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="06v-bn-Idf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="N3i-o4-NsF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="O1F-Zb-oMh"/>
+                            <constraint firstAttribute="bottom" secondItem="N3i-o4-NsF" secondAttribute="bottom" id="PdM-EJ-8KU"/>
+                            <constraint firstItem="N3i-o4-NsF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WxI-XE-SMT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="N3i-o4-NsF" secondAttribute="trailing" id="ZUe-mT-q9w"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="drumButton" destination="Jrg-oo-oYV" id="pJU-4K-gK6"/>
+                        <outlet property="guitarButton" destination="RnB-k4-cHg" id="CYG-jx-pSQ"/>
+                        <outlet property="pianoButton" destination="cMC-xl-Fzg" id="IJC-Qw-uCC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="89"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="drumImage" width="200" height="200"/>
+        <image name="guitarImage" width="200" height="200"/>
+        <image name="pianoImage" width="200" height="200"/>
+    </resources>
 </document>
